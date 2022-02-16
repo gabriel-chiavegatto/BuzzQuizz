@@ -1,0 +1,7 @@
+
+
+
+function abrirQuizz(clique){
+    
+}
+

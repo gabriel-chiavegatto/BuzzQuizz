@@ -8,6 +8,7 @@
     <title>Buzz Quizz</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -17,19 +18,20 @@
     <header>
         <h1>BuzzQuizz</h1>
     </header>
-    <main>
+    <main class="tela1">
         <div>
             <section class="seusQuizzes">
                 <article class="seus">
                     <h2>Seus Quizzes</h2>
-                    <img src="plus.png" alt="Adicionar">
+                    <img onclick="criarQuizz()" src="imgs/plus.png" alt="Adicionar">
                 </article>
                 <div class="flexQuizzes">
                     <div class="quizz seuPrimeiroQuizz">
                         <p class="naoCriou">Você não criou nenhum quizz ainda</p>
-                        <p class="criarPrimeiroQuizz">Criar Quizz</p>
+                        <p class="criarPrimeiroQuizz" onclick="criarQuizz()">Criar Quizz</p>
                     </div>
-                    <div class="quizz postado"></div>
+                    <div class="quizz postado escondido" onclick="abrirQuizz(this)">
+                    </div>
                 </div>
             </section>
             <section class="todosQuizzes">
@@ -37,12 +39,98 @@
                     <h2>Todos os Quizzes</h2>
                 </article>
                 <div class="flexQuizzes">
-                    <div class="quizz postado"></div>
-                    <div class="quizz postado"></div>
+                    <div class="quizz postado" onclick="abrirQuizz(this)">
+                        
+
+                    </div>
                 </div>
             </section>
         </div>
     </main>
+    <main class="tela2 escondido">
+        <img class="capa" src="imgs/ossimpsons.png" alt="capa do quizz">
+        <section class="questao">
+            <div>
+                <p class="pergunta">Quais os nomes dos filhos de Hommer e Margie Simpsom?</p>
+                <div class="opcoes">
+                    <figure>
+                        <img src="imgs/bart-e-cia.png" alt="crianças">
+                        <figcaption>
+                            Bart,Lisa e Maggie.
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="imgs/bart-e-cia-2.png" alt="crianças">
+                        <figcaption>
+                            Bart,Lisa e Maggie.
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="imgs/bart-e-cia-3.png" alt="crianças">
+                        <figcaption>
+                            Bart,Lisa e Maggie.
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="imgs/bart-e-cia-4.png" alt="crianças">
+                        <figcaption>
+                            Bart,Lisa e Maggie.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section class="questao">
+            <div>
+                <p class="pergunta">Quais os nomes dos filhos de Hommer e Margie Simpsom?</p>
+                <div class="opcoes">
+                    <figure>
+                        <img src="imgs/bart-e-cia.png" alt="crianças">
+                        <figcaption>
+                            Bart,Lisa e Maggie.
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="imgs/bart-e-cia-2.png" alt="crianças">
+                        <figcaption>
+                            Bart,Lisa e Maggie.
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="imgs/bart-e-cia-3.png" alt="crianças">
+                        <figcaption>
+                            Bart,Lisa e Maggie.
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="imgs/bart-e-cia-4.png" alt="crianças">
+                        <figcaption>
+                            Bart,Lisa e Maggie.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section class="resultado">
+            <div>
+                <p class="porcentagemDeAcertos">100% de acerto. Show de bolinha.</p>
+                <img src="imgs/ao-alcool.png" alt="imagem da sua avaliação">
+                <p class="parabens">Parabéns!! Eu proponho um brinde! Ao álcool... A causa e a solução de todos os
+                    problemas. SAUDE!</p>
+            </div>
+        </section>
+        <section class="reiniciaOuVolta">
+            <div>
+                <button class="reiniciar">Reiniciar Quizz</button>
+                <button class="voltar">Voltar pra home</button>
+            </div>
+        </section>
+    </main>
+
+    <main class="tela3.1 escondido">TELA 3.1</main>
+    <main class="tela3.2 escondido">TELA 3.2</main>
+    <main class="tela3.3 escondido">TELA 3.3</main>
+    <main class="tela3.4 escondido">TELA 3.4</main>
 </body>
 
 </html>
