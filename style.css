@@ -109,6 +109,8 @@ h2{
 
 .tela2{
     margin-top: 69px;
+    display: flex;
+    justify-content: center;
 }
 .capa{
     width: 100%;
