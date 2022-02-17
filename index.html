@@ -1,252 +1,216 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buzz Quizz</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="script.js" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header>
-      <h1>BuzzQuizz</h1>
-    </header>
-    <main class="tela1">
-      <div>
-        <section class="seusQuizzes">
-          <article class="seus">
-            <h2>Seus Quizzes</h2>
-            <img onclick="criarQuizz()" src="imgs/plus.png" alt="Adicionar" />
-          </article>
-          <div class="flexQuizzes">
-            <div class="quizz seuPrimeiroQuizz">
-              <p class="naoCriou">Você não criou nenhum quizz ainda</p>
-              <p class="criarPrimeiroQuizz" onclick="criarQuizz()">
-                Criar Quizz
-              </p>
-            </div>
-            <div
-              class="quizz postado escondido"
-              onclick="abrirQuizz(this)"
-            ></div>
-          </div>
-        </section>
-        <section class="todosQuizzes">
-          <article>
-            <h2>Todos os Quizzes</h2>
-          </article>
-          <div class="flexQuizzes">
-            <div class="quizz postado" onclick="abrirQuizz(this)"></div>
-            <div class="quizz postado" onclick="abrirQuizz(this)"></div>
-            <div class="quizz postado" onclick="abrirQuizz(this)"></div>
-          </div>
-        </section>
-      </div>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buzz Quizz</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="script.js" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
 
-    <main class="tela2 escondido">
-      <div>
-        <img class="capa" src="imgs/ossimpsons.png" alt="capa do quizz" />
-
-        <section class="questao">
-          <div>
-            <p class="pergunta">
-              Quais os nomes dos filhos de Hommer e Margie Simpsom?
-            </p>
-            <div class="opcoes">
-              <figure>
-                <img src="imgs/bart-e-cia.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-2.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-3.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-4.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-        <section class="questao">
-          <div>
-            <p class="pergunta">
-              Quais os nomes dos filhos de Hommer e Margie Simpsom?
-            </p>
-            <div class="opcoes">
-              <figure>
-                <img src="imgs/bart-e-cia.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-2.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-3.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-4.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-        <section class="resultado">
-          <div>
-            <p class="porcentagemDeAcertos">100% de acerto. Show de bolinha.</p>
-            <img src="imgs/ao-alcool.png" alt="imagem da sua avaliação" />
-            <p class="parabens">
-              Parabéns!! Eu proponho um brinde! Ao álcool... A causa e a solução
-              de todos os problemas. SAUDE!
+<body>
+  <header>
+    <h1>BuzzQuizz</h1>
+  </header>
+  <main class="tela1">
+    <div>
+      <section class="seusQuizzes">
+        <article class="seus">
+          <h2>Seus Quizzes</h2>
+          <img onclick="criarQuizz()" src="imgs/plus.png" alt="Adicionar" />
+        </article>
+        <div class="flexQuizzes">
+          <div class="quizz seuPrimeiroQuizz">
+            <p class="naoCriou">Você não criou nenhum quizz ainda</p>
+            <p class="criarPrimeiroQuizz" onclick="criarQuizz()">
+              Criar Quizz
             </p>
           </div>
-        </section>
-        <section class="reiniciaOuVolta">
-          <div>
-            <button class="reiniciar">Reiniciar Quizz</button>
-            <button class="voltar" onclick="voltarPraHome()">
-              Voltar para home
-            </button>
+          <div class="quizz postado escondido" onclick="abrirQuizz(this)"></div>
+        </div>
+      </section>
+      <section class="todosQuizzes">
+        <article>
+          <h2>Todos os Quizzes</h2>
+        </article>
+        <div class="flexQuizzes">
+          <div class="quizz postado" onclick="abrirQuizz(this)">
+            <img src="imgs/ossimpsons.png" alt="capa do quizz">
+            <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
           </div>
-        </section>
-      </div>
-    </main>
+        </div>
+      </section>
+    </div>
+  </main>
 
-    <main class="tela3-1 escondido">
-      <div class="tela3-h1">
-        <h1>Comece pelo começo</h1>
+  <main class="tela2 escondido">
+    <div>
+      <div class="capa">
+        <img src="imgs/ossimpsons.png" alt="capa do quizz" />
+        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
       </div>
-      <div class="all-inputs">
-        <input
-          class="titulo-quizz"
-          type="text"
-          placeholder="Título do seu quizz"
-        />
-        <input
-          class="url-quizz"
-          type="text"
-          placeholder="URL da imagem do seu quizz"
-        />
-        <input
-          class="qtdperguntas-quizz"
-          type="text"
-          placeholder="Quantidade de perguntas do quizz"
-        />
-        <input
-          class="qtdniveis-quizz"
-          type="text"
-          placeholder="Quantidade de níveis do quizz"
-        />
-      </div>
-      <footer class="button-tela3">
-        <button onclick="prosseguirCriarPerguntas()">
-          Prosseguir para criar perguntas
-        </button>
-      </footer>
-    </main>
+      <section class="questao">
+        <div>
+          <p class="pergunta">
+            Quais os nomes dos filhos de Hommer e Margie Simpsom?
+          </p>
+          <div class="opcoes">
+            <figure>
+              <img src="imgs/bart-e-cia.png" alt="crianças" />
+              <figcaption>Bart,Lisa e Maggie.</figcaption>
+            </figure>
+            <figure>
+              <img src="imgs/bart-e-cia-2.png" alt="crianças" />
+              <figcaption>Bart,Lisa e Maggie.</figcaption>
+            </figure>
+            <figure>
+              <img src="imgs/bart-e-cia-3.png" alt="crianças" />
+              <figcaption>Bart,Lisa e Maggie.</figcaption>
+            </figure>
+            <figure>
+              <img src="imgs/bart-e-cia-4.png" alt="crianças" />
+              <figcaption>Bart,Lisa e Maggie.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="questao">
+        <div>
+          <p class="pergunta">
+            Quais os nomes dos filhos de Hommer e Margie Simpsom?
+          </p>
+          <div class="opcoes">
+            <figure>
+              <img src="imgs/bart-e-cia.png" alt="crianças" />
+              <figcaption>Bart,Lisa e Maggie.</figcaption>
+            </figure>
+            <figure>
+              <img src="imgs/bart-e-cia-2.png" alt="crianças" />
+              <figcaption>Bart,Lisa e Maggie.</figcaption>
+            </figure>
+            <figure>
+              <img src="imgs/bart-e-cia-3.png" alt="crianças" />
+              <figcaption>Bart,Lisa e Maggie.</figcaption>
+            </figure>
+            <figure>
+              <img src="imgs/bart-e-cia-4.png" alt="crianças" />
+              <figcaption>Bart,Lisa e Maggie.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="resultado">
+        <div>
+          <p class="porcentagemDeAcertos">100% de acerto. Show de bolinha.</p>
+          <img src="imgs/ao-alcool.png" alt="imagem da sua avaliação" />
+          <p class="parabens">
+            Parabéns!! Eu proponho um brinde! Ao álcool... A causa e a solução
+            de todos os problemas. SAUDE!
+          </p>
+        </div>
+      </section>
+      <section class="reiniciaOuVolta">
+        <div>
+          <button class="reiniciar">Reiniciar Quizz</button>
+          <button class="voltar" onclick="voltarPraHome()">
+            Voltar para home
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
 
-    <main class="tela3-2 escondido">
-      <div class="tela3-h1">
-        <h1>Crie suas perguntas</h1>
-      </div>
-      <!--Será implementado via JS-->
-      <div class="perguntas">
-        <h1>Pergunta 1</h1>
-        <input
-          class="input-style"
-          type="text"
-          placeholder="Texto da Pergunta"
-        />
-        <input
-          class="input-style"
-          type="text"
-          placeholder="Cor de fundo da Pergunta"
-        />
-      </div>
-      <div class="resposta-correta">
-        <h1>Resposta Correta</h1>
-        <input class="input-style" type="text" placeholder="Resposta Correta" />
-        <input class="input-style" type="text" placeholder="URL da imagem" />
-      </div>
-      <div class="resposta-incorreta">
-        <h1>Respostas Incorretas</h1>
-        <input
-          class="input-style marg"
-          type="text"
-          placeholder="Resposta Incorreta 1"
-        />
-        <input class="input-style" type="text" placeholder="URL da imagem 1" />
-      </div>
-      <div class="resposta-incorreta">
-        <input
-          class="input-style marg"
-          type="text"
-          placeholder="Resposta Incorreta 2"
-        />
-        <input class="input-style" type="text" placeholder="URL da imagem 2" />
-      </div>
-      <div class="resposta-incorreta">
-        <input
-          class="input-style marg"
-          type="text"
-          placeholder="Resposta Incorreta 3"
-        />
-        <input class="input-style" type="text" placeholder="URL da imagem 3" />
-      </div>
+  <main class="tela3-1 escondido">
+    <div class="tela3-h1">
+      <h1>Comece pelo começo</h1>
+    </div>
+    <div class="all-inputs">
+      <input class="titulo-quizz" type="text" placeholder="Título do seu quizz" />
+      <input class="url-quizz" type="text" placeholder="URL da imagem do seu quizz" />
+      <input class="qtdperguntas-quizz" type="text" placeholder="Quantidade de perguntas do quizz" />
+      <input class="qtdniveis-quizz" type="text" placeholder="Quantidade de níveis do quizz" />
+    </div>
+    <footer class="button-tela3">
+      <button onclick="prosseguirCriarPerguntas()">
+        Prosseguir para criar perguntas
+      </button>
+    </footer>
+  </main>
 
-      <!--Será implementado via JS-->
-      <footer class="button-tela3">
-        <button onclick="prosseguirCriarNiveis()">
-          Prosseguir para criar níveis
-        </button>
-      </footer>
-    </main>
+  <main class="tela3-2 escondido">
+    <div class="tela3-h1">
+      <h1>Crie suas perguntas</h1>
+    </div>
+    <!--Será implementado via JS-->
+    <div class="perguntas">
+      <h1>Pergunta 1</h1>
+      <input class="input-style" type="text" placeholder="Texto da Pergunta" />
+      <input class="input-style" type="text" placeholder="Cor de fundo da Pergunta" />
+    </div>
+    <div class="resposta-correta">
+      <h1>Resposta Correta</h1>
+      <input class="input-style" type="text" placeholder="Resposta Correta" />
+      <input class="input-style" type="text" placeholder="URL da imagem" />
+    </div>
+    <div class="resposta-incorreta">
+      <h1>Respostas Incorretas</h1>
+      <input class="input-style marg" type="text" placeholder="Resposta Incorreta 1" />
+      <input class="input-style" type="text" placeholder="URL da imagem 1" />
+    </div>
+    <div class="resposta-incorreta">
+      <input class="input-style marg" type="text" placeholder="Resposta Incorreta 2" />
+      <input class="input-style" type="text" placeholder="URL da imagem 2" />
+    </div>
+    <div class="resposta-incorreta">
+      <input class="input-style marg" type="text" placeholder="Resposta Incorreta 3" />
+      <input class="input-style" type="text" placeholder="URL da imagem 3" />
+    </div>
 
-    <main class="tela3-3 escondido">
-      <div class="tela3-h1">
-        <h1>Agora, decida os níveis!</h1>
-      </div>
-      <!--Será implementado via JS-->
+    <!--Será implementado via JS-->
+    <footer class="button-tela3">
+      <button onclick="prosseguirCriarNiveis()">
+        Prosseguir para criar níveis
+      </button>
+    </footer>
+  </main>
 
-      <!--Será implementado via JS-->
-      <footer class="button-tela3">
-        <button onclick="finalizarQuizz()">Finalizar Quizz</button>
-      </footer>
-    </main>
+  <main class="tela3-3 escondido">
+    <div class="tela3-h1">
+      <h1>Agora, decida os níveis!</h1>
+    </div>
+    <!--Será implementado via JS-->
 
-    <main class="tela3-4 escondido">
-      <div class="tela3-h1">
-        <h1>Seu quizz está pronto!</h1>
-      </div>
-      <!--Será implementado via JS-->
+    <!--Será implementado via JS-->
+    <footer class="button-tela3">
+      <button onclick="finalizarQuizz()">Finalizar Quizz</button>
+    </footer>
+  </main>
 
-      <!--Será implementado via JS-->
-      <footer class="button-acessarquizz">
-        <button>Acessar Quizz</button>
-        <p class="go-home" onclick="voltarParaHome()">Voltar para Home</p>
-      </footer>
-    </main>
+  <main class="tela3-4 escondido">
+    <div class="tela3-h1">
+      <h1>Seu quizz está pronto!</h1>
+    </div>
+    <!--Será implementado via JS-->
 
-    <script src="script.js"></script>
-    <script src="scripts-tela3.js/tela3-1.js"></script>
-    <script src="scripts-tela3.js/tela3-2.js"></script>
-    <script src="scripts-tela3.js/tela3-3.js"></script>
-    <script src="scripts-tela3.js/tela3-4.js"></script>
-  </body>
+    <!--Será implementado via JS-->
+    <footer class="button-acessarquizz">
+      <button>Acessar Quizz</button>
+      <p class="go-home" onclick="voltarParaHome()">Voltar para Home</p>
+    </footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+  <script src="scripts-tela3.js/tela3-1.js"></script>
+  <script src="scripts-tela3.js/tela3-2.js"></script>
+  <script src="scripts-tela3.js/tela3-3.js"></script>
+  <script src="scripts-tela3.js/tela3-4.js"></script>
+
+</body>
+
 </html>
