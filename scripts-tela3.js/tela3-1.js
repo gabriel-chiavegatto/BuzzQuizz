@@ -9,22 +9,23 @@ function validarTitulo(){
     }else{
         console.log("Deu certo");
         mudardetela += 1;
+        return tituloQuizz;
     }
 }
 
-/*
 function validarURL(){
     const urlQuizz = document.querySelector('.url-quizz').value;
-    const regex = ((/\.(jpeg|jpg|gif|png)$/) != null);
-    if(regex == urlQuizz){
-        console.log("Deu certo pra caralho fodase");
+    const res = urlQuizz.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+    if(res == urlQuizz){
+        console.log("Deu certo demais");
         mudardetela += 1;
+        return urlQuizz;
     }else{
         alert("URL Inválida");
         mudardetela = false;
     }
 }
-*/
+
 
 function validarQtdPerguntas(){
     const qntdPerguntasQuizz = document.querySelector('.qtdperguntas-quizz').value;
@@ -50,18 +51,20 @@ function validarQtdNiveis(){
 
 function prosseguirCriarPerguntas(){
     validarTitulo();
-    //validarURL();
+    validarURL();
     validarQtdPerguntas();
     validarQtdNiveis();
     console.log(mudardetela);
-    if(mudardetela == 3){
+    if(mudardetela == 4){
     const esconderTela31 = document.querySelector(".tela3-1");
     const abrirTela32 = document.querySelector(".tela3-2");
     esconderTela31.classList.add("escondido");
     abrirTela32.classList.remove("escondido");
  }else{
-     alert("Faz de novo")
+     mudardetela = 0;
+     alert("Preencha todos os campos corretamente")
  }
-     const qntdPerguntasQuizz = getQntPerguntas();
+     let qntdPerguntasQuizz = document.querySelector('.qtdperguntas-quizz').value;
+     gerarPerguntas(qntdPerguntasQuizz);
 }
 
