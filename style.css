@@ -165,6 +165,7 @@ h2{
     right: 33px;
     display: flex;
     text-align: center;
+    justify-content: center;
     align-items: center;
     color: #FFFFFF;
     font-weight: normal;
@@ -184,14 +185,13 @@ h2{
 .questao{
     background: #FFFFFF;
     width: 375px;
-    height: 436px;
     margin-bottom: 28px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
     
 }
-.questao p{
+.pergunta{
     background: #434CA0;
     width: 340px;
     height: 89px;
@@ -298,6 +298,15 @@ figcaption{
     color: #818181;
     border: none;
     margin-bottom: 34px;
+}
+.embassar-imagens-onclick{
+    opacity: 0.3;
+}
+.fica-verde{
+    color: #009C22;
+}
+.fica-vermelho{
+    color: #FF0B0B;
 }
 
 /* layout tela 3.1  */

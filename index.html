@@ -51,60 +51,35 @@
 
   <main class="tela2 escondido">
     <div>
-      <div class="capa">
-        <img src="imgs/ossimpsons.png" alt="capa do quizz" />
-        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+      <section class="capa">
+      </section>
+      <div class="questoes">
+        <section class="questao">
+          <div class="conteudo">
+            <p class="pergunta">
+              Quais os nomes dos filhos de Hommer e Margie Simpsom?
+            </p> <style> .pergunta {background-color: aqua;}</style>
+            <div class="opcoes">
+              <figure onclick="analizarRespostas()">
+                <img src="imgs/bart-e-cia.png" alt="crianças" />
+                <figcaption>Bart,Lisa e Maggie.</figcaption>
+              </figure>
+              <figure>
+                <img src="imgs/bart-e-cia-2.png" alt="crianças" />
+                <figcaption>Bart,Lisa e Maggie.</figcaption>
+              </figure>
+              <figure>
+                <img src="imgs/bart-e-cia-3.png" alt="crianças" />
+                <figcaption>Bart,Lisa e Maggie.</figcaption>
+              </figure>
+              <figure>
+                <img src="imgs/bart-e-cia-4.png" alt="crianças" />
+                <figcaption>Bart,Lisa e Maggie.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
       </div>
-      <section class="questao">
-        <div>
-          <p class="pergunta">
-            Quais os nomes dos filhos de Hommer e Margie Simpsom?
-          </p>
-          <div class="opcoes">
-            <figure>
-              <img src="imgs/bart-e-cia.png" alt="crianças" />
-              <figcaption>Bart,Lisa e Maggie.</figcaption>
-            </figure>
-            <figure>
-              <img src="imgs/bart-e-cia-2.png" alt="crianças" />
-              <figcaption>Bart,Lisa e Maggie.</figcaption>
-            </figure>
-            <figure>
-              <img src="imgs/bart-e-cia-3.png" alt="crianças" />
-              <figcaption>Bart,Lisa e Maggie.</figcaption>
-            </figure>
-            <figure>
-              <img src="imgs/bart-e-cia-4.png" alt="crianças" />
-              <figcaption>Bart,Lisa e Maggie.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-      <section class="questao">
-        <div>
-          <p class="pergunta">
-            Quais os nomes dos filhos de Hommer e Margie Simpsom?
-          </p>
-          <div class="opcoes">
-            <figure>
-              <img src="imgs/bart-e-cia.png" alt="crianças" />
-              <figcaption>Bart,Lisa e Maggie.</figcaption>
-            </figure>
-            <figure>
-              <img src="imgs/bart-e-cia-2.png" alt="crianças" />
-              <figcaption>Bart,Lisa e Maggie.</figcaption>
-            </figure>
-            <figure>
-              <img src="imgs/bart-e-cia-3.png" alt="crianças" />
-              <figcaption>Bart,Lisa e Maggie.</figcaption>
-            </figure>
-            <figure>
-              <img src="imgs/bart-e-cia-4.png" alt="crianças" />
-              <figcaption>Bart,Lisa e Maggie.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
       <section class="resultado">
         <div>
           <p class="porcentagemDeAcertos">100% de acerto. Show de bolinha.</p>
@@ -206,6 +181,7 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
+  <script src="tela2.js"></script>
   <script src="scripts-tela3.js/tela3-1.js"></script>
   <script src="scripts-tela3.js/tela3-2.js"></script>
   <script src="scripts-tela3.js/tela3-3.js"></script>
