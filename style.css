@@ -392,6 +392,12 @@ figcaption{
     justify-content: center;
 }
 
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .perguntas{
     display: flex;
     flex-direction: column;
@@ -410,6 +416,7 @@ figcaption{
 .input-style{
     width: 341px;
     height: 46px;
+    border: solid 1px #D1D1D1;
     border-radius: 5px;
     margin: 9px 0px;
 }
@@ -463,6 +470,22 @@ figcaption{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.textarea{
+    width: 341px;
+    height: 177px;
+    border: solid 1px #D1D1D1;
+    border-radius: 5px;
+}
+
+.textarea::placeholder{
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 22.27px;
+    margin-left: 17px;
+    color: #BABABA;
 }
 
 /* layout tela 3.4 */
