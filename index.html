@@ -57,55 +57,52 @@
       </div>
     </main>
 
-  <main class="tela2 escondido">
-    <div class="contudo-tela2">
-      <section class="capa">
-      </section>
-      <div class="questoes">
+    <main class="tela2 escondido">
+      <div class="contudo-tela2">
+        <section class="capa"></section>
+        <div class="questoes"></div>
+        <footer></footer>
       </div>
-      <footer></footer>
-      
-    </div>
-  </main>
+    </main>
 
-<main class="tela3-1 escondido">
-  <div class="tela3-h1">
-    <h1>Comece pelo começo</h1>
-  </div>
-  <div class="all-inputs">
-    <input
-      class="titulo-quizz"
-      type="text"
-      placeholder="Título do seu quizz"
-      minlength="20"
-      maxlength="65"
-      required
-    />
-    <input
-      class="url-quizz"
-      type="url"
-      placeholder="URL da imagem do seu quizz"
-      required
-    />
-    <input
-      class="qtdperguntas-quizz"
-      type="number"
-      placeholder="Quantidade de perguntas do quizz"
-      required
-    />
-    <input
-      class="qtdniveis-quizz"
-      type="number"
-      placeholder="Quantidade de níveis do quizz"
-      required
-    />
-  </div>
-  <footer class="button-tela3">
-    <button onclick="prosseguirCriarPerguntas()">
-      Prosseguir para criar perguntas
-    </button>
-  </footer>
-</main>
+    <main class="tela3-1 escondido">
+      <div class="tela3-h1">
+        <h1>Comece pelo começo</h1>
+      </div>
+      <div class="all-inputs">
+        <input
+          class="titulo-quizz"
+          type="text"
+          placeholder="Título do seu quizz"
+          minlength="20"
+          maxlength="65"
+          required
+        />
+        <input
+          class="url-quizz"
+          type="url"
+          placeholder="URL da imagem do seu quizz"
+          required
+        />
+        <input
+          class="qtdperguntas-quizz"
+          type="number"
+          placeholder="Quantidade de perguntas do quizz"
+          required
+        />
+        <input
+          class="qtdniveis-quizz"
+          type="number"
+          placeholder="Quantidade de níveis do quizz"
+          required
+        />
+      </div>
+      <footer class="button-tela3">
+        <button onclick="prosseguirCriarPerguntas()">
+          Prosseguir para criar perguntas
+        </button>
+      </footer>
+    </main>
 
     <main class="tela3-2 escondido">
       <div class="tela3-h1">
@@ -147,11 +144,10 @@
 
       <!--Será implementado via JS-->
       <footer class="button-acessarquizz">
-        <button>Acessar Quizz</button>
+        <button onclick="acessarQuizz(this)">Acessar Quizz</button>
         <p class="go-home" onclick="voltarParaHome()">Voltar para Home</p>
       </footer>
     </main>
-
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>

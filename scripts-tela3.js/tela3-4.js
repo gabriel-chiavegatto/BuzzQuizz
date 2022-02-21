@@ -7,8 +7,14 @@ function gerarSucessoQuizz(tituloQuizz,urlQuizz){
       `
 }
 
-function acessarQuizz(resposta){
-    abrirQuizz();
+function acessarQuizz(clique){
+    const esconderTela34 = document.querySelector(".tela3-4");
+    const abrirTela2 = document.querySelector(".tela2");
+    esconderTela34.classList.add("escondido");
+    abrirTela2.classList.remove("escondido");
+    // abrirTela2.querySelector(".capa").scrollIntoView();
+    const indiceDoQuizzSelecionado = clique;
+    exibirQuizzClicado(indiceDoQuizzSelecionado);
 }
 
 function gerarMeuQuizz(){

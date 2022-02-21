@@ -4,20 +4,18 @@ function gerarNiveis(qntdNiveisQuizz){
         niveis += `
         <div class="perguntas">
         <h1>Nível ${n+1}</h1>
-        <input id="inputnivel1" class="input-style" type="text" placeholder="Título do Nível" minlength="10" required />
+        <input class="input-style textodonivel" type="text" placeholder="Título do Nível" minlength="10" required />
         <input
-          id="inputnivel2"
-          class="input-style"
+          class="input-style numerodonivel"
           type="number"
           placeholder="% de acerto mínima" required
         />
         <input
-          id="inputnivel3"
-          class="input-style"
+          class="input-style urldonivel"
           type="url"
           placeholder="URL da imagem do nível" required
         />
-        <textarea id="inputnivel4" class="textarea" placeholder="Descrição do Nível" minlength="30" required> </textarea>
+        <textarea class="textarea descricaodonivel" placeholder="Descrição do Nível" minlength="30" required> </textarea>
       </div>
           `;
       }
@@ -89,29 +87,26 @@ function validaNiveis(){
 function enviarParaServidor(){
     let tituloQuizz = document.querySelector('.titulo-quizz').value;
     let urlQuizz = document.querySelector('.url-quizz').value;
-    let textodapergunta = document.getElementById('inputpergunta1').value; //let [textodapergunta]
-    textodapergunta = [textodapergunta]
-    let cordapergunta = document.getElementById('inputpergunta2').value;
-    cordapergunta = [cordapergunta]
-    let textodaresposta = document.getElementById('inputpergunta3').value;
-    textodaresposta = [textodaresposta]
-    let urldaresposta = document.getElementById('inputpergunta4').value;
-    urldaresposta = [urldaresposta]
-    let textodaincorreta = document.getElementById('inputpergunta5').value;
-    textodaincorreta = [textodaincorreta]
-    let urldaincorreta = document.getElementById('inputpergunta6').value;
-    urldaincorreta = [urldaincorreta]
-    let textodonivel = document.getElementById('inputnivel1').value;
-    textodonivel = [textodonivel]
-    let numerodonivel = document.getElementById('inputnivel2').value;
-    numerodonivel = [numerodonivel]
-    let urldonivel = document.getElementById('inputnivel3').value;
-    urldonivel = [urldonivel]
-    let descricaodonivel = document.getElementById('inputnivel4').value;
-    descricaodonivel = [descricaodonivel] 
+    let textodapergunta = document.querySelectorAll('.textodapergunta');
+
+    let values1 = textodapergunta.map(document.querySelector('.textodapergunta').value)
+
+    let cordapergunta = document.querySelectorAll('.textodacor');
+    let textodaresposta = document.querySelectorAll('.textodaresposta');
+    let urldaresposta = document.querySelectorAll('.urldaresposta');
+    let textodaincorreta = document.querySelectorAll('textodaincorreta1');
+    let urldaincorreta = document.querySelectorAll('urldaincorreta1');
+    let textodaincorreta = document.querySelectorAll('textodaincorreta2');
+    let urldaincorreta = document.querySelectorAll('urldaincorreta2');
+    let textodaincorreta = document.querySelectorAll('textodaincorreta3');
+    let urldaincorreta = document.querySelectorAll('urldaincorreta3');
+    let textodonivel = document.querySelectorAll('.textodonivel');
+    let numerodonivel = document.querySelectorAll('.numerodonivel');
+    let urldonivel = document.querySelectorAll('.urldonivel');
+    let descricaodonivel = document.querySelectorAll('.descricaodonivel');
 
   
-  const promisse = axios.post("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes", 
+  let promisse = axios.post("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes", 
   {
     title: `${tituloQuizz}`,
     image: `${urlQuizz}`,
@@ -170,13 +165,13 @@ function enviarParaServidor(){
         title: `${textodonivel[0]}`,
         image: `${urldonivel[0]}`,
         text: `${descricaodonivel[0]}`,
-        minValue: 0
+        minValue: `${numerodonivel[0]}`,
       },
       {
         title: `${textodonivel[1]}`,
         image: `${urldonivel[1]}`,
         text: `${descricaodonivel[1]}`,
-        minValue: 50
+        minValue: `${numerodonivel[0]}`,
       }
     ]
   })
@@ -185,6 +180,8 @@ function enviarParaServidor(){
     console.error(erro.response);
   })
   armazenarDadosStorage(promisse);
+  acessarQuizz(promisse.data)
+  return resposta;
 }
 
 

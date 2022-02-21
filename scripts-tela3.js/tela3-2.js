@@ -7,14 +7,14 @@ function gerarPerguntas(qntdPerguntasQuizz){
         <h1>Pergunta ${p+1}</h1>
         <input
           id="inputpergunta1"
-          class="input-style"
+          class="input-style textodapergunta"
           type="text"
           placeholder="Texto da Pergunta"
           minlength="20" required
         />
         <input
           id="inputpergunta2"
-          class="input-style"
+          class="input-style textodacor"
           type="text"
           placeholder="Cor de fundo da Pergunta"
           required
@@ -22,34 +22,34 @@ function gerarPerguntas(qntdPerguntasQuizz){
       </div>
       <div class="resposta-correta">
         <h1>Resposta Correta</h1>
-        <input id="inputpergunta3" class="input-style" type="text" placeholder="Resposta Correta" required />
-        <input id="inputpergunta4" class="input-style" type="url" placeholder="URL da imagem" required />
+        <input id="inputpergunta3" class="input-style textodacorreta" type="text" placeholder="Resposta Correta" required />
+        <input id="inputpergunta4" class="input-style textodaurl" type="url" placeholder="URL da imagem" required />
       </div>
       <div class="resposta-incorreta">
         <h1>Respostas Incorretas</h1>
         <input
           id="inputpergunta5"
-          class="input-style marg"
+          class="input-style marg textodaincorreta1"
           type="text"
           placeholder="Resposta Incorreta 1" required
         />
-        <input id="inputpergunta6" class="input-style" type="url" placeholder="URL da imagem 1" required />
+        <input id="inputpergunta6" class="input-style urldaincorreta1" type="url" placeholder="URL da imagem 1" required />
       </div>
       <div class="resposta-incorreta">
         <input
-          class="input-style marg"
+          class="input-style marg textodaincorreta2"
           type="text"
           placeholder="Resposta Incorreta 2"
         />
-        <input class="input-style" type="url" placeholder="URL da imagem 2" />
+        <input class="input-style urldaincorreta2" type="url" placeholder="URL da imagem 2" />
       </div>
       <div class="resposta-incorreta">
         <input
-          class="input-style marg"
+          class="input-style marg textodaincorreta3"
           type="text"
           placeholder="Resposta Incorreta 3"
         />
-        <input class="input-style" type="url" placeholder="URL da imagem 3" />
+        <input class="input-style urldaincorreta3" type="url" placeholder="URL da imagem 3" />
       </div>
           `;
       }
