@@ -93,7 +93,6 @@ function validaNiveis(){
 function enviarParaServidor(){
     let tituloQuizz = document.querySelector('.titulo-quizz').value;
     let urlQuizz = document.querySelector('.url-quizz').value;
-<<<<<<< HEAD
     let textodapergunta = document.querySelectorAll('.textodapergunta').value;
     textodapergunta = [textodapergunta]
     let cordapergunta = document.querySelectorAll('.textodacor').value;
