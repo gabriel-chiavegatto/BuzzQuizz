@@ -7,12 +7,23 @@ function abrirQuizz(clique) {
     const abrirTela2 = document.querySelector(".tela2");
     esconderTela1.classList.add("escondido");
     abrirTela2.classList.remove("escondido");
-
+    // abrirTela2.querySelector(".capa").scrollIntoView();
     const indiceDoQuizzSelecionado = clique;
-    exibirQuizzClicado(indiceDoQuizzSelecionado)
+    exibirQuizzClicado(indiceDoQuizzSelecionado);
+}
+function scrollarParaProximaQuestao(){
+    const questaoEmAberto = document.querySelector(".em-aberto");
+    if(questaoEmAberto != null){
+        questaoEmAberto.scrollIntoView();
+    } else{
+        document.querySelector("footer").scrollIntoView();
+    }
+
 }
 
 function exibirQuizzClicado(k) {
+    
+    document.querySelector(".capa").scrollIntoView();
 
     const capa = document.querySelector(".tela2 .capa");
     capa.innerHTML = `
@@ -26,7 +37,7 @@ function exibirQuizzClicado(k) {
 
     for (let i = 0; i < serverResponse.data[k].questions.length; i++) {
         questoes.innerHTML += `
-        <section class="questao questao${i}">
+        <section class="questao questao${i} em-aberto">
             <div class="conteudo">
                 <p class="pergunta">
                 ${serverResponse.data[k].questions[i].title}
@@ -58,6 +69,8 @@ function analizarRespostas(clique) {
 
     if (!jaClicou) {
         questaoDoClique.classList.add("questao-respondida");
+        questaoDoClique.classList.remove("em-aberto");
+        console.log(questaoDoClique);
         clique.classList.add("clicada");
         imgDaEscolhida.classList.add("clicada");
         textoDaEscolhida.classList.add("clicada");
@@ -72,6 +85,8 @@ function analizarRespostas(clique) {
 
         calcularDesempenho();
         verificarSeTodasForamRespondidas();
+        setTimeout(scrollarParaProximaQuestao, 2000);
+
     }
 }
 
@@ -143,6 +158,7 @@ function reiniciarQuizz(){
     let footer = document.querySelector("footer");
     footer.innerHTML = " ";
     exibirQuizzClicado(quizzAberto);
+    
 }
 
 function voltarPraHome() {
