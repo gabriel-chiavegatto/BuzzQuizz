@@ -7,6 +7,7 @@
     <title>Buzz Quizz</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="desktop.css" />
     <link rel="stylesheet" href="script.js" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,7 +29,7 @@
             <img onclick="criarQuizz()" src="imgs/plus.png" alt="Adicionar" />
           </article>
           <div class="flexQuizzes">
-            <div class="quizz seuPrimeiroQuizz">
+            <div id="nossoquizz" class="quizz seuPrimeiroQuizz">
               <p class="naoCriou">Você não criou nenhum quizz ainda</p>
               <p class="criarPrimeiroQuizz" onclick="criarQuizz()">
                 Criar Quizz

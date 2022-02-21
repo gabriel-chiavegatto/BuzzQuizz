@@ -1,6 +1,6 @@
 function gerarPerguntas(qntdPerguntasQuizz){
   console.log(qntdPerguntasQuizz);
-    let perguntas = ""
+    let perguntas = ""  //let perguntas = []
     for (let p = 0; p < qntdPerguntasQuizz; p++) {
         perguntas += `
         <div class="perguntas">
@@ -69,6 +69,7 @@ function validarInputPergunta1(){
 }else{
     console.log("Deu certo");
     mudarparaniveis = true;
+    return [textodapergunta];
 }
 }
 
@@ -79,6 +80,7 @@ function validarInputPergunta2(){
   if(cordapergunta == hex){
     console.log("Deu certo");
     mudarparaniveis = true;
+    return [cordapergunta];
 }else{
     alert("Texto da Cor Pergunta Inválido");
     mudarparaniveis = false;
@@ -93,6 +95,7 @@ function validarInputPergunta3(){
 }else{
     console.log("Deu certo");
     mudarparaniveis = true;
+    return [textodaresposta];
 }
 }
 
@@ -103,6 +106,7 @@ function validarInputPergunta4(){
   if(urldaresposta == res){
     console.log("Deu certo");
     mudarparaniveis = true;
+    return [urldaresposta];
 }else{
     alert("Texto da URL da Resposta Inválido");
     mudarparaniveis = false;
@@ -117,6 +121,7 @@ function validarInputPergunta5(){
 }else{
     console.log("Deu certo");
     mudarparaniveis = true;
+    return [textodaincorreta];
 }
 }
 
@@ -127,6 +132,7 @@ function validarInputPergunta6(){
   if(urldaincorreta == res){
     console.log("Deu certo");
     mudarparaniveis = true;
+    return [urldaincorreta];
 }else{
     alert("Texto da URL da Resposta Inválido");
     mudarparaniveis = false;

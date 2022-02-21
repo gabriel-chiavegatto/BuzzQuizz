@@ -1,0 +1,20 @@
+@media (min-width: 1100px) {
+	.all-inputs > input{
+		width: 564px;
+	}
+	.button-tela3 > button{
+		width: 367px;
+	}
+	.input-style{
+		width: 564px;
+	}
+	.button-acessarquizz > button{
+		width: 367px;
+	}
+	.tela3-h1 > h1{
+		font-size: 23px;
+	}
+	.go-home{
+		font-size: 21px;
+	}
+}
