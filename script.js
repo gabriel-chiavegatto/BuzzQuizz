@@ -2,26 +2,8 @@ const promessa = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quiz
 promessa.then(obterQuizzes);
 promessa.catch(promessaFalhou);
 
-let indiceData = [{
-    idM,
-    titleM,
-    imageM,
-    questionsM: [{
-        titleM,
-        colorM,
-        answersM:[{
-            textM,
-            imageM,
-            isCorrectAnswerM
-        }]
-    }],
-    levelsM:[{
-        titleM,
-        imageM,
-        textM,
-        minValueM
-    }]
-}];
+let serverResponse;
+
 
 
 function obterQuizzes(resposta) {
@@ -29,7 +11,7 @@ function obterQuizzes(resposta) {
     // console.log(resposta);
     //rodar todos os quizzes postados
 
-    for (i = 0; i < resposta.data.length; i++) {
+    for (let i = 0; i < resposta.data.length; i++) {
 
         botarNaTela1.innerHTML += ` 
         <div class="quizz postado" onclick="abrirQuizz(${i})">
@@ -37,26 +19,15 @@ function obterQuizzes(resposta) {
             <p>${resposta.data[i].title}</p>
         </div>`
     }
+    serverResponse = resposta;
 }
-    
 
-function promessaFalhou(resposta){
+
+function promessaFalhou(erro){
     console.log("Promessa Falhou, erro no servidor");
+    console.log(erro.response);
 }
 
-function abrirQuizz(clique){
-    const esconderTela1 = document.querySelector(".tela1");
-    const abrirTela2 = document.querySelector(".tela2");
-    esconderTela1.classList.add("escondido");
-    abrirTela2.classList.remove("escondido");
-
-}
-function voltarPraHome(){
-    const esconderTela2 = document.querySelector(".tela2");
-    const abrirTela1 = document.querySelector(".tela1");
-    esconderTela2.classList.add("escondido");
-    abrirTela1.classList.remove("escondido");
-}
 
 //Criar quizz
 

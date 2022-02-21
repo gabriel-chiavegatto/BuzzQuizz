@@ -57,121 +57,55 @@
       </div>
     </main>
 
-    <main class="tela2 escondido">
-      <div>
-        <div class="capa">
-          <img src="imgs/ossimpsons.png" alt="capa do quizz" />
-          <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
-        </div>
-        <section class="questao">
-          <div>
-            <p class="pergunta">
-              Quais os nomes dos filhos de Hommer e Margie Simpsom?
-            </p>
-            <div class="opcoes">
-              <figure>
-                <img src="imgs/bart-e-cia.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-2.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-3.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-4.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-        <section class="questao">
-          <div>
-            <p class="pergunta">
-              Quais os nomes dos filhos de Hommer e Margie Simpsom?
-            </p>
-            <div class="opcoes">
-              <figure>
-                <img src="imgs/bart-e-cia.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-2.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-3.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-              <figure>
-                <img src="imgs/bart-e-cia-4.png" alt="crianças" />
-                <figcaption>Bart,Lisa e Maggie.</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-        <section class="resultado">
-          <div>
-            <p class="porcentagemDeAcertos">100% de acerto. Show de bolinha.</p>
-            <img src="imgs/ao-alcool.png" alt="imagem da sua avaliação" />
-            <p class="parabens">
-              Parabéns!! Eu proponho um brinde! Ao álcool... A causa e a solução
-              de todos os problemas. SAUDE!
-            </p>
-          </div>
-        </section>
-        <section class="reiniciaOuVolta">
-          <div>
-            <button class="reiniciar">Reiniciar Quizz</button>
-            <button class="voltar" onclick="voltarPraHome()">
-              Voltar para home
-            </button>
-          </div>
-        </section>
+  <main class="tela2 escondido">
+    <div class="contudo-tela2">
+      <section class="capa">
+      </section>
+      <div class="questoes">
       </div>
-    </main>
+      <footer></footer>
+      
+    </div>
+  </main>
 
-    <main class="tela3-1 escondido">
-      <div class="tela3-h1">
-        <h1>Comece pelo começo</h1>
-      </div>
-      <div class="all-inputs">
-        <input
-          class="titulo-quizz"
-          type="text"
-          placeholder="Título do seu quizz"
-          minlength="20"
-          maxlength="65"
-          required
-        />
-        <input
-          class="url-quizz"
-          type="url"
-          placeholder="URL da imagem do seu quizz"
-          required
-        />
-        <input
-          class="qtdperguntas-quizz"
-          type="number"
-          placeholder="Quantidade de perguntas do quizz"
-          required
-        />
-        <input
-          class="qtdniveis-quizz"
-          type="number"
-          placeholder="Quantidade de níveis do quizz"
-          required
-        />
-      </div>
-      <footer class="button-tela3">
-        <button onclick="prosseguirCriarPerguntas()">
-          Prosseguir para criar perguntas
-        </button>
-      </footer>
-    </main>
+<main class="tela3-1 escondido">
+  <div class="tela3-h1">
+    <h1>Comece pelo começo</h1>
+  </div>
+  <div class="all-inputs">
+    <input
+      class="titulo-quizz"
+      type="text"
+      placeholder="Título do seu quizz"
+      minlength="20"
+      maxlength="65"
+      required
+    />
+    <input
+      class="url-quizz"
+      type="url"
+      placeholder="URL da imagem do seu quizz"
+      required
+    />
+    <input
+      class="qtdperguntas-quizz"
+      type="number"
+      placeholder="Quantidade de perguntas do quizz"
+      required
+    />
+    <input
+      class="qtdniveis-quizz"
+      type="number"
+      placeholder="Quantidade de níveis do quizz"
+      required
+    />
+  </div>
+  <footer class="button-tela3">
+    <button onclick="prosseguirCriarPerguntas()">
+      Prosseguir para criar perguntas
+    </button>
+  </footer>
+</main>
 
     <main class="tela3-2 escondido">
       <div class="tela3-h1">
@@ -217,8 +151,11 @@
         <p class="go-home" onclick="voltarParaHome()">Voltar para Home</p>
       </footer>
     </main>
+
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
+    <script src="tela2.js"></script>
     <script src="scripts-tela3.js/tela3-1.js"></script>
     <script src="scripts-tela3.js/tela3-2.js"></script>
     <script src="scripts-tela3.js/tela3-3.js"></script>
