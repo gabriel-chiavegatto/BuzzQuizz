@@ -28,12 +28,6 @@ function promessaFalhou(erro){
     console.log(erro.response);
 }
 
-function voltarPraHome(){
-    const esconderTela2 = document.querySelector(".tela2");
-    const abrirTela1 = document.querySelector(".tela1");
-    esconderTela2.classList.add("escondido");
-    abrirTela1.classList.remove("escondido");
-}
 
 //Criar quizz
 

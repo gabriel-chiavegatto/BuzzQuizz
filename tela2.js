@@ -1,4 +1,6 @@
-
+let quizzAberto;
+let porcentagemDeAcertos;
+let seuNivel = 0;
 
 function abrirQuizz(clique) {
     const esconderTela1 = document.querySelector(".tela1");
@@ -45,14 +47,17 @@ function exibirQuizzClicado(k) {
             `
         }
     }
+    quizzAberto = k;
 }
 
 function analizarRespostas(clique) {
     const jaClicou = clique.classList.contains("ja-foi-clicada");
     const imgDaEscolhida = clique.querySelector("img");
     const textoDaEscolhida = clique.querySelector("figcaption")
-    console.log(jaClicou);
-    if (!jaClicou){
+    const questaoDoClique = clique.parentNode.parentNode.parentNode;
+
+    if (!jaClicou) {
+        questaoDoClique.classList.add("questao-respondida");
         clique.classList.add("clicada");
         imgDaEscolhida.classList.add("clicada");
         textoDaEscolhida.classList.add("clicada");
@@ -64,25 +69,89 @@ function analizarRespostas(clique) {
         imgsRespostas.forEach(embassarImgs);
         const textosDasRespostas = pai.querySelectorAll("figcaption");
         textosDasRespostas.forEach(colorirTexto);
+
+        calcularDesempenho();
+        verificarSeTodasForamRespondidas();
     }
 }
 
 function addJaFoiClicada(opcoes) {
-    console.log(opcoes);
     opcoes.classList.add("ja-foi-clicada");
 }
-function embassarImgs(imgs){
+function embassarImgs(imgs) {
     const clicada = imgs.classList.contains("clicada");
-    if(!clicada){
+    if (!clicada) {
         imgs.classList.add("embassar-imagens-onclick");
     }
 }
-function colorirTexto(figcaptions){
+function colorirTexto(figcaptions) {
     const pai = figcaptions.parentNode;
     const seraSeAcertou = pai.classList.contains("true");
-    if(seraSeAcertou){
+    if (seraSeAcertou) {
         figcaptions.classList.add("fica-verde");
     } else {
         figcaptions.classList.add("fica-vermelho");
     }
 }
+function calcularDesempenho() {
+    const acertos = document.querySelectorAll(".clicada .fica-verde");
+    porcentagemDeAcertos = parseInt(((acertos.length) / (serverResponse.data[quizzAberto].questions.length)) * 100);
+    console.log(porcentagemDeAcertos);
+    console.log(acertos[0]);
+}
+
+function verificarSeTodasForamRespondidas() {
+    const respondidas = document.querySelectorAll(".questao-respondida");
+
+    if (serverResponse.data[quizzAberto].questions.length == respondidas.length) {
+        colocarResultadoNaTela(porcentagemDeAcertos);
+    }
+}
+function colocarResultadoNaTela(porcentagem) {
+    
+    for (let i = 0; i < serverResponse.data[quizzAberto].levels.length; i++) {
+        if (porcentagem >= serverResponse.data[quizzAberto].levels[i].minValue) {
+            seuNivel = i;
+        }
+    }
+
+    const tela = document.querySelector("footer");
+    tela.innerHTML += `
+            <section class="resultado">
+                <div>
+                <p class="porcentagemDeAcertos">${serverResponse.data[quizzAberto].levels[seuNivel].title}</p>
+                <img src="${serverResponse.data[quizzAberto].levels[seuNivel].image}" alt="imagem da sua avaliação" />
+                <p class="parabens">
+                ${serverResponse.data[quizzAberto].levels[seuNivel].text}
+                </p>
+                </div>
+            </section>
+            <section class="reiniciaOuVolta">
+                <div>
+                <button class="reiniciar" onclick="reiniciarQuizz()">Reiniciar Quizz</button>
+                <button class="voltar" onclick="voltarPraHome()">
+                    Voltar para home
+                </button>
+                </div>
+            </section>
+        `
+}
+
+function reiniciarQuizz(){
+    porcentagemDeAcertos = null;
+    seuNivel = 0;
+    let footer = document.querySelector("footer");
+    footer.innerHTML = " ";
+    exibirQuizzClicado(quizzAberto);
+}
+
+function voltarPraHome() {
+    const esconderTela2 = document.querySelector(".tela2");
+    const abrirTela1 = document.querySelector(".tela1");
+    esconderTela2.classList.add("escondido");
+    abrirTela1.classList.remove("escondido");
+    let footer = document.querySelector("footer");
+    footer.innerHTML = " ";
+
+}
+
