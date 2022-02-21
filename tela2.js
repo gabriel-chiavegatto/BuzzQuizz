@@ -35,6 +35,8 @@ function exibirQuizzClicado(k) {
 
     questoes.innerHTML = null;
 
+    serverResponse.data[k].questions.sort(comparador);
+
     for (let i = 0; i < serverResponse.data[k].questions.length; i++) {
         questoes.innerHTML += `
         <section class="questao questao${i} em-aberto">
@@ -48,6 +50,9 @@ function exibirQuizzClicado(k) {
             </div>
         </section>
          `
+        
+         serverResponse.data[k].questions[i].answers.sort(comparador);
+
         for (let j = 0; j < serverResponse.data[k].questions[i].answers.length; j++) {
             const answersTo = document.querySelector(`.questao${i} .opcoes`);
             answersTo.innerHTML += `
@@ -59,6 +64,9 @@ function exibirQuizzClicado(k) {
         }
     }
     quizzAberto = k;
+}
+function comparador() { 
+	return Math.random() - 0.5; 
 }
 
 function analizarRespostas(clique) {
