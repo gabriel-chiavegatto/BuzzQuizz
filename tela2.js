@@ -142,19 +142,21 @@ function colocarResultadoNaTela(porcentagem) {
     tela.innerHTML += `
             <section class="resultado">
                 <div>
-                <p class="porcentagemDeAcertos">${serverResponse.data[quizzAberto].levels[seuNivel].title}</p>
-                <img src="${serverResponse.data[quizzAberto].levels[seuNivel].image}" alt="imagem da sua avaliação" />
-                <p class="parabens">
-                ${serverResponse.data[quizzAberto].levels[seuNivel].text}
-                </p>
+                    <p class="porcentagemDeAcertos">${serverResponse.data[quizzAberto].levels[seuNivel].title}</p>
+                    <div class="imgEparabens">
+                        <img src="${serverResponse.data[quizzAberto].levels[seuNivel].image}" alt="imagem da sua avaliação" />
+                        <p class="parabens">
+                        ${serverResponse.data[quizzAberto].levels[seuNivel].text}
+                        </p>
+                    </div>
                 </div>
             </section>
             <section class="reiniciaOuVolta">
                 <div>
-                <button class="reiniciar" onclick="reiniciarQuizz()">Reiniciar Quizz</button>
-                <button class="voltar" onclick="voltarPraHome()">
-                    Voltar para home
-                </button>
+                    <button class="reiniciar" onclick="reiniciarQuizz()">Reiniciar Quizz</button>
+                    <button class="voltar" onclick="voltarPraHome()">
+                        Voltar para home
+                    </button>
                 </div>
             </section>
         `

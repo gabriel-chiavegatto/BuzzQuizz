@@ -90,6 +90,7 @@ function enviarParaServidor(){
     let textodapergunta = document.querySelectorAll('.textodapergunta');
 
     let values1 = textodapergunta.map(document.querySelector('.textodapergunta').value)
+    console.log(values1);
 
     let cordapergunta = document.querySelectorAll('.textodacor');
     let textodaresposta = document.querySelectorAll('.textodaresposta');
