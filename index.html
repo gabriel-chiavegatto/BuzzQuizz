@@ -26,19 +26,15 @@
         <section class="seusQuizzes">
           <article class="seus">
             <h2>Seus Quizzes</h2>
-            <img onclick="criarQuizz()" src="imgs/plus.png" alt="Adicionar" />
+            <img class= "icon" onclick="criarQuizz()" src="imgs/plus.png" alt="Adicionar" />
           </article>
           <div class="flexQuizzes">
-            <div id="nossoquizz" class="quizz seuPrimeiroQuizz">
+            <div id="nossoquizz" class="seuPrimeiroQuizz">
               <p class="naoCriou">Você não criou nenhum quizz ainda</p>
               <p class="criarPrimeiroQuizz" onclick="criarQuizz()">
                 Criar Quizz
               </p>
             </div>
-            <div
-              class="quizz postado escondido"
-              onclick="abrirQuizz(this)"
-            ></div>
           </div>
         </section>
         <section class="todosQuizzes">
@@ -46,12 +42,6 @@
             <h2>Todos os Quizzes</h2>
           </article>
           <div class="flexQuizzes">
-            <div class="quizz postado" onclick="abrirQuizz(this)">
-              <img src="imgs/ossimpsons.png" alt="capa do quizz" />
-              <p>
-                Acerte os personagens corretos dos Simpsons e prove seu amor!
-              </p>
-            </div>
           </div>
         </section>
       </div>

@@ -17,4 +17,39 @@
 	.go-home{
 		font-size: 21px;
 	}
+
+
+/* tela 1 */
+.tela1{
+	margin-top: 146px;
+}
+
+.seuPrimeiroQuizz{
+	width: 1051px;
+}
+.todosQuizzes{
+    margin-top: 77px;
+	width: 1051px; 
+}
+.quizz{
+	margin: 0 0 12px 0;;
+}
+.flexQuizzes{
+	background-color: aqua;
+	width: 1051px; 
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+article{
+	width: 1051px;
+}
+
+
+/* tela 2 */
+
+
+
+
+
 }
