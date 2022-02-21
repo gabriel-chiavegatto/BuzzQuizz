@@ -4,18 +4,24 @@ function gerarNiveis(qntdNiveisQuizz){
         niveis += `
         <div class="perguntas">
         <h1>Nível ${n+1}</h1>
-        <input class="input-style textodonivel" type="text" placeholder="Título do Nível" minlength="10" required />
+        <input id="inputnivel1" class="input-style textodonivel" type="text" 
+        placeholder="Título do Nível" minlength="10" required data-identifier="level" />
         <input
+          id="inputnivel2"
           class="input-style numerodonivel"
           type="number"
           placeholder="% de acerto mínima" required
+          data-identifier="level"
         />
         <input
+          id="inputnivel3"
           class="input-style urldonivel"
           type="url"
           placeholder="URL da imagem do nível" required
+          data-identifier="level"
         />
-        <textarea class="textarea descricaodonivel" placeholder="Descrição do Nível" minlength="30" required> </textarea>
+        <textarea id="inputnivel4" class="textarea" 
+        placeholder="Descrição do Nível" minlength="30" required data-identifier="level"> </textarea>
       </div>
           `;
       }
@@ -87,26 +93,29 @@ function validaNiveis(){
 function enviarParaServidor(){
     let tituloQuizz = document.querySelector('.titulo-quizz').value;
     let urlQuizz = document.querySelector('.url-quizz').value;
-    let textodapergunta = document.querySelectorAll('.textodapergunta');
-
-    let values1 = textodapergunta.map(document.querySelector('.textodapergunta').value)
-
-    let cordapergunta = document.querySelectorAll('.textodacor');
-    let textodaresposta = document.querySelectorAll('.textodaresposta');
-    let urldaresposta = document.querySelectorAll('.urldaresposta');
-    let textodaincorreta = document.querySelectorAll('textodaincorreta1');
-    let urldaincorreta = document.querySelectorAll('urldaincorreta1');
-    let textodaincorreta = document.querySelectorAll('textodaincorreta2');
-    let urldaincorreta = document.querySelectorAll('urldaincorreta2');
-    let textodaincorreta = document.querySelectorAll('textodaincorreta3');
-    let urldaincorreta = document.querySelectorAll('urldaincorreta3');
-    let textodonivel = document.querySelectorAll('.textodonivel');
-    let numerodonivel = document.querySelectorAll('.numerodonivel');
-    let urldonivel = document.querySelectorAll('.urldonivel');
-    let descricaodonivel = document.querySelectorAll('.descricaodonivel');
-
+    let textodapergunta = document.querySelectorAll('.textodapergunta').value;
+    textodapergunta = [textodapergunta]
+    let cordapergunta = document.querySelectorAll('.textodacor').value;
+    cordapergunta = [cordapergunta]
+    let textodaresposta = document.querySelectorAll('.textodaresposta').value;
+    textodaresposta = [textodaresposta]
+    let urldaresposta = document.querySelectorAll('.urldaresposta').value;
+    urldaresposta = [urldaresposta]
+    let textodaincorreta = document.querySelectorAll('.textodaincorreta').value;
+    textodaincorreta = [textodaincorreta]
+    let urldaincorreta = document.querySelectorAll('.urldaincorreta').value;
+    urldaincorreta = [urldaincorreta]
+    let textodonivel = document.querySelectorAll('.textodonivel').value;
+    textodonivel = [textodonivel]
+    let numerodonivel = document.querySelectorAll('.numerodonivel').value;
+    numerodonivel = [numerodonivel]
+    let urldonivel = document.querySelectorAll('.urldonivel').value;
+    urldonivel = [urldonivel]
+    let descricaodonivel = document.querySelectorAll('.textarea').value;
+    descricaodonivel = [descricaodonivel]
+   
   
-  let promisse = axios.post("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes", 
+  const promisse = axios.post("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes", 
   {
     title: `${tituloQuizz}`,
     image: `${urlQuizz}`,
@@ -165,13 +174,13 @@ function enviarParaServidor(){
         title: `${textodonivel[0]}`,
         image: `${urldonivel[0]}`,
         text: `${descricaodonivel[0]}`,
-        minValue: `${numerodonivel[0]}`,
+        minValue: 0
       },
       {
         title: `${textodonivel[1]}`,
         image: `${urldonivel[1]}`,
         text: `${descricaodonivel[1]}`,
-        minValue: `${numerodonivel[0]}`,
+        minValue: 50
       }
     ]
   })
@@ -180,8 +189,7 @@ function enviarParaServidor(){
     console.error(erro.response);
   })
   armazenarDadosStorage(promisse);
-  acessarQuizz(promisse.data)
-  return resposta;
+  //acessarQuizz(promisse.data);
 }
 
 

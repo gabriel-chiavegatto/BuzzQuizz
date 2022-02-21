@@ -7,13 +7,13 @@ function gerarSucessoQuizz(tituloQuizz,urlQuizz){
       `
 }
 
-function acessarQuizz(clique){
+function acessarQuizz(resposta){
     const esconderTela34 = document.querySelector(".tela3-4");
     const abrirTela2 = document.querySelector(".tela2");
     esconderTela34.classList.add("escondido");
     abrirTela2.classList.remove("escondido");
     // abrirTela2.querySelector(".capa").scrollIntoView();
-    const indiceDoQuizzSelecionado = clique;
+    const indiceDoQuizzSelecionado = resposta;
     exibirQuizzClicado(indiceDoQuizzSelecionado);
 }
 
