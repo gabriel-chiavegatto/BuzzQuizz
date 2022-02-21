@@ -38,7 +38,6 @@
 	margin: 0 0 12px 0;;
 }
 .flexQuizzes{
-	background-color: aqua;
 	width: 1051px; 
 	display: flex;
 	flex-wrap: wrap;
@@ -48,9 +47,50 @@ article{
 	width: 1051px;
 }
 
-
-
 /* tela 2 */
+.capa{
+	width: 100%;
+	height: 227px;
+}
+.capa img{
+	width: 100%;
+	height: 227px;
+}
+.questao{
+	width: 759px;
+}
+.pergunta{
+	width: 688.16px;
+	height: 137.99px;
+}
+.opcoes{
+	width: 688.16px;
+}
+.opcoes img{
+    width: 329.91px;
+	height: 175.2px;
 
+}
+figcaption{
+    width: 329.91px;
+	height: 34.11px;
+}
+.resultado{
+	width: 759px;
+}
+.imgEparabens{
+	display: flex;
+	justify-content: space-between;
+}
+.resultado img{
+	width: 364px;
+}
+.parabens{
+	width: 328px;
+}
+.porcentagemDeAcertos{
+	width: 727px;
+	height: 99px;
+}
 
 }
